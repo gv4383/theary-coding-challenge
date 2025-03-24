@@ -1,6 +1,11 @@
-
 export default {
   Base: '/api',
+  Tree: {
+    Base: '/tree',
+    Get: '',
+    Add: '',
+    Delete: '',
+  },
   Users: {
     Base: '/users',
     Get: '/all',

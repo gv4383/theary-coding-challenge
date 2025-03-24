@@ -7,7 +7,6 @@ import User from '@src/models/User';
 
 import { IReq, IRes, parseReq } from './common';
 
-
 /******************************************************************************
                                 Variables
 ******************************************************************************/
@@ -17,7 +16,6 @@ const Validators = {
   update: parseReq({ user: User.test }),
   delete: parseReq({ id: transform(Number, isNumber) }),
 } as const;
-
 
 /******************************************************************************
                                 Functions
@@ -57,7 +55,6 @@ async function delete_(req: IReq, res: IRes) {
   await UserService.delete(id);
   res.status(HttpStatusCodes.OK).end();
 }
-
 
 /******************************************************************************
                                 Export default
