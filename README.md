@@ -37,6 +37,10 @@ After installing all project node modules, you can run the project in developmen
 
 ### `npm run dev`
 
+To run the testing suite, use the following command:
+
+### `npm test`
+
 ## Endpoints
 
 Below is the base URL for the API:
@@ -133,9 +137,11 @@ No response
 
 ## Technical Notes
 
+### Database Implementation
+
 Regrettably, no actual database was implemented in this project in favor of getting a working MVP out. There is however a basic persistence layer implemented in the form of a JSON file (found in `src/repos/database.json`). This JSON file represents the response from the ORM as it queries the data from the database.
 
-Under different circumstances, I would have probably used some sort of relational database such as PostgreSQL since it's what I'm familiar with. I would probably structure the schema for the node table as such:
+Under different circumstances, I would have probably used some sort of relational/non-relational database such as PostgreSQL or MongoDB since I'm familiar with them. I would probably structure the schema for the node table as such:
 
 | column    | type   |
 | --------- | ------ |
@@ -143,6 +149,21 @@ Under different circumstances, I would have probably used some sort of relationa
 | parent_id | UUID   |
 | label     | STRING |
 | created   | DATE   |
+
+### Testing Strategy
+
+As far as testing goes, I wasn't able to test as much as I wanted to (I was only able to test the happy paths of the HTTP responses). If given more time, I would have like to have tested the different layers individually. Essentially, I would set up tests for the following ares:
+
+- Repos
+  - These would tests to see if we're properly fetching/saving nodes to/from the database
+- Services
+  - These would test the business logic of the different service functions
+  - In the case of fetching the tree structure, I would want to test to see if the tree structure is being properly formatted (the array of nodes from the database is different from the array of node entities that will be passed along as the API response)
+  - In the case of saving a new node I would need to test if the entity is making it to the repo layer
+- Routes
+  - These tests would be similar to what's currently implemented, which is to test if we're passing along the correct HTTP responses (along with the actual response body if there is one)
+
+This is the general testing strategy that I would have liked to have taken if given more time to implement. Of course I would be testing any utility functions as well to make sure they're achieving what I want them to.
 
 ## Available Scripts
 
