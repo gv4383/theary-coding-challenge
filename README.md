@@ -158,7 +158,7 @@ Run the server in development mode.<br/>
 
 Run all unit-tests.
 
-### `npm test -- "name of test file" (i.e. users).`
+### `npm test -- "name of test file" (i.e. tree).`
 
 Run a single unit-test.
 

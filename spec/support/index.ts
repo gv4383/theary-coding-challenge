@@ -1,5 +1,4 @@
 import { Response } from 'supertest';
-import UserRepo from '@src/repos/UserRepo';
 import { IParseObjectError, parseJson } from 'jet-validators/utils';
 import { isString } from 'jet-validators';
 import TreeRepo from '@src/repos/TreeRepo';
