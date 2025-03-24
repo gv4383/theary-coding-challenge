@@ -23,38 +23,7 @@
       "parentId": 483308532702,
       "label": "frog",
       "created": "2025-03-24T19:00:44.601Z"
-    },
-    {
-      "id": 723900814550,
-      "parentId": -1,
-      "label": "yeet",
-      "created": "2025-03-24T19:01:23.767Z"
-    },
-    {
-      "id": 87210560993,
-      "parentId": 723900814550,
-      "label": "agane",
-      "created": "2025-03-24T19:02:00.781Z"
     }
   ],
-  "users": [
-    {
-      "id": 366115170645,
-      "name": "Sean Maxwell",
-      "email": "smaxwell@example.com",
-      "created": "2024-03-22T05:14:36.252Z"
-    },
-    {
-      "id": 310946254456,
-      "name": "John Smith",
-      "email": "john.smith@example.com",
-      "created": "2024-03-22T05:20:55.079Z"
-    },
-    {
-      "id": 143027113460,
-      "name": "Gordan Freeman",
-      "email": "nova@prospect.com",
-      "created": "2024-03-22T05:42:18.895Z"
-    }
-  ]
+  "users": []
 }
