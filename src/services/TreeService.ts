@@ -1,11 +1,11 @@
-import { NodeEntity } from '@src/models/Tree';
+import { INode, NodeEntity } from '@src/models/TreeNode';
 import TreeRepo from '@src/repos/TreeRepo';
 
 async function getTree(): Promise<NodeEntity[]> {
   const nodes = await TreeRepo.getNodes();
 
   const nodeMap = new Map<NodeEntity['id'], NodeEntity>();
-  const defaultNode: NodeEntity = {
+  const defaultNodeEntity: NodeEntity = {
     id: -1,
     label: '',
     children: [],
@@ -23,10 +23,10 @@ async function getTree(): Promise<NodeEntity[]> {
 
   nodes.forEach((node) => {
     if (node.parentId < 0 && nodeMap.has(node.id)) {
-      rootNodes.push(nodeMap.get(node.id) ?? defaultNode);
+      rootNodes.push(nodeMap.get(node.id) ?? defaultNodeEntity);
     } else if (nodeMap.has(node.parentId)) {
-      (nodeMap.get(node.parentId) ?? defaultNode).children.push(
-        nodeMap.get(node.id) ?? defaultNode
+      (nodeMap.get(node.parentId) ?? defaultNodeEntity).children.push(
+        nodeMap.get(node.id) ?? defaultNodeEntity
       );
     }
   });
@@ -34,6 +34,11 @@ async function getTree(): Promise<NodeEntity[]> {
   return rootNodes;
 }
 
+async function addNode(node: INode): Promise<void> {
+  return TreeRepo.add(node);
+}
+
 export default {
   getTree,
+  addNode,
 } as const;

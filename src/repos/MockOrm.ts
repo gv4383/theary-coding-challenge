@@ -3,7 +3,7 @@ import jsonfile from 'jsonfile';
 import ENV from '@src/common/ENV';
 import { NodeEnvs } from '@src/common/constants';
 import { IUser } from '@src/models/User';
-import { INode } from '@src/models/Tree';
+import { INode } from '@src/models/TreeNode';
 
 /******************************************************************************
                                 Variables

@@ -1,13 +1,21 @@
 import HttpStatusCodes from '@src/common/HttpStatusCodes';
-import { IReq, IRes } from './common';
+import { IReq, IRes, parseReq } from './common';
 import TreeService from '@src/services/TreeService';
+import TreeNode from '@src/models/TreeNode';
+
+const Validators = {
+  add: parseReq({ node: TreeNode.test }),
+} as const;
 
 async function getAll(_: IReq, res: IRes) {
   const tree = await TreeService.getTree();
   res.status(HttpStatusCodes.OK).json({ tree });
 }
 
-function add(_: IReq, res: IRes) {
+async function add(req: IReq, res: IRes) {
+  const newNode = TreeNode.new(req.body);
+  const { node } = Validators.add({ node: newNode });
+  await TreeService.addNode(node);
   res.status(HttpStatusCodes.CREATED).end();
 }
 
