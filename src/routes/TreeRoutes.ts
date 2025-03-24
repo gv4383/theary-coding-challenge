@@ -1,8 +1,10 @@
 import HttpStatusCodes from '@src/common/HttpStatusCodes';
 import { IReq, IRes } from './common';
+import TreeService from '@src/services/TreeService';
 
-function getAll(_: IReq, res: IRes) {
-  res.status(HttpStatusCodes.OK).json({ test: 'Getting tree...' });
+async function getAll(_: IReq, res: IRes) {
+  const tree = await TreeService.getTree();
+  res.status(HttpStatusCodes.OK).json({ tree });
 }
 
 function add(_: IReq, res: IRes) {
