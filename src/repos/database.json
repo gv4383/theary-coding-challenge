@@ -23,24 +23,6 @@
       "parentId": 483308532702,
       "label": "frog",
       "created": "2025-03-24T19:00:44.601Z"
-    },
-    {
-      "id": 786284654999,
-      "parentId": -1,
-      "label": "agane",
-      "created": "2025-03-24T23:19:35.505Z"
-    },
-    {
-      "id": 315770865903,
-      "parentId": 332812362979,
-      "label": "bear child",
-      "created": "2025-03-24T23:20:56.360Z"
-    },
-    {
-      "id": 5415613459,
-      "parentId": 315770865903,
-      "label": "bear grandchild",
-      "created": "2025-03-24T23:21:37.123Z"
     }
   ]
 }
