@@ -61,8 +61,8 @@ describe('TreeRouter', () => {
         agent
           .post('/api/tree')
           .send({
-            parentId: 723900814550,
-            label: 'agane',
+            parentId: 406405373860,
+            label: 'cat child',
           })
           .end((_, res) => {
             expect(res.status).toBe(HttpStatusCodes.CREATED);
